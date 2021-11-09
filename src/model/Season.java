@@ -120,7 +120,7 @@ public class Season{
 	public String toString(){
 		String out="";
 		super.toString();
-		out+="***** Datos de la pelicula *****"+"\n"+
+		out+="***** Datos de la temporada *****"+"\n"+
 		"Name: "+name+"\n"+
 		"Number Episodes Scheduled: "+numberEpisodesScheduled +"\n"+
 		"Number Episodes Published: "+numberEpisodesPublished +"\n"+

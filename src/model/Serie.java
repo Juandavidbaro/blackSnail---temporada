@@ -17,11 +17,12 @@ public class Serie extends Product {
 
 	public String addSeason(String name,int numberofepisodesScheduled,int numberofepisodesPublished,Date myDate, String trailer){
 		String out="";		
-		
-		for(int i=0; i<seasons.length;i++){
+		boolean flag=false;
+		for(int i=0; i<seasons.length && !flag;i++){
 			if(seasons[i]==null){
 				seasons[i] = new Season( name, numberofepisodesScheduled, numberofepisodesPublished, myDate, trailer);
 				out="Product succesfully added"; 
+				flag=true;
 			}else{
 				out="Product cannot be added"; 
 			}
@@ -41,6 +42,7 @@ public class Serie extends Product {
 		this.protagonistName=protagonistName;
 		this.censorchip=censorchip;
 		seasons=new Season[seasonsAmount];
+	
 		
 	}
 	
@@ -96,7 +98,7 @@ public class Serie extends Product {
 	*/
 	public String toString(){
 		String out="";
-		//super.toString();
+		super.toString();
 		out+="***** Datos de la serie *****"+"\n"+
 		"Nombre: "+name+"\n"+
 		"Sinopsis: "+synopsis +"\n"+
@@ -105,7 +107,13 @@ public class Serie extends Product {
 		"Nombre de los protagonistas: "+protagonistName +"\n"+
 		"Motivo de censura: "+censorchip +"\n";
 		
-		
+		for (int i=0;i<seasons.length;i++){
+			if (seasons[i]!=null){
+				out+=seasons[i].toString()+"\n";
+				
+			}
+		}
+				
 		return out;
 	}
 }	
