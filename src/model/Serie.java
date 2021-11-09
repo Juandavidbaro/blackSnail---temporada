@@ -7,7 +7,7 @@ public class Serie extends Product {
 		
 	private Date myDate;
 	private Season mySeason;
-	
+	private final  int seasonsAmount=20;
 	/**
 	* Metodo para crear un arreglo de productos
 	*/
@@ -40,7 +40,7 @@ public class Serie extends Product {
 		super(name,synopsis,directorName,myDate);
 		this.protagonistName=protagonistName;
 		this.censorchip=censorchip;
-		seasons=new Season[20];
+		seasons=new Season[seasonsAmount];
 		
 	}
 	
